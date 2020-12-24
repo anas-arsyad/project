@@ -1,11 +1,12 @@
 /*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import "colorVariables";
+
+// @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap");
+// @import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -91,6 +92,7 @@ header {
 section {
   margin-bottom: 70px;
 }
+
 .img-cover {
   object-fit: cover;
   height: 100%;
@@ -98,13 +100,17 @@ section {
 }
 
 .img-contain {
-  object-fit: fill;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
 
 .card {
-  // height: 100%;
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+  border-radius: 15px;
+
   .tag {
     z-index: 3;
     font-size: 0.875rem;
@@ -113,9 +119,9 @@ section {
     position: absolute;
     top: 0;
     right: 0;
+    color: $white;
     min-height: 30px;
     border-radius: 0 15px;
-    color: $white;
     font-weight: 400;
     span {
       font-weight: 300;
@@ -139,6 +145,7 @@ section {
       font-size: 0.875rem;
     }
   }
+
   &.card-featured {
     overflow: hidden;
     cursor: pointer;
@@ -171,16 +178,18 @@ section {
     .meta-wrapper {
       z-index: 4;
       color: $white;
+      padding: 20px;
       position: absolute;
       top: 0;
       bottom: 0;
       width: 100%;
-      transform: translate(0);
+      transform: translateY(0);
       transition: 0.3s transform ease-in-out;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
     }
+
     &:hover {
       .meta-wrapper {
         transform: translateY(-10px);
@@ -195,40 +204,10 @@ section {
   }
 }
 
-.testimonial-hero,.testimonial-hero img{
-    width: 365px;
-    height: 500px;
+.testimonial-hero,
+.testimonial-hero img {
+  width: 365px;
+  height: 500px;
 }
-footer{
-    border-top:1px solid $gray-200;
-    padding-top: 50px;
-
-    .brand-tagline{
-        margin-top: 8px;
-        color: $gray-500;
-        font-weight: 300;
-    }
 
 
-
-
-
-    .list-group-item{
-        padding:0.3125rem 0;
-        border: 0;
-        a,span{
-            color: $gray-500;
-            font-weight: 300;
-        }
-        a{
-            @include hover-focus{
-                color: $gray-800;
-            }
-        }
-    }
-    .copyrights{
-        padding: 50px 0;
-        font-weight: 300;
-        color: $gray-500;
-    }
-}
